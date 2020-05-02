@@ -103,7 +103,7 @@ Meteor.methods({
     update.voteresult = "";
     update.currentChancellor = -1;
 
-    if (room.alive <= 3) {
+    if (room.alive <= 5) {
       update.ruledout = [
         room.players[room.currentChancellor].playerId ];
     } else {
