@@ -94,6 +94,12 @@ Template.main.helpers({
   }
 });
 
+Template.main.events({
+  "click .dark-mode": function() {
+    document.querySelector('html').classList.toggle('dark-mode');
+  }
+})
+
 Template.startmenu.events({
   "click .newgame-button": function() {
     Session.set("view", "newgame");
@@ -105,7 +111,7 @@ Template.startmenu.events({
   },
   "click .demo-button": function() {
     Session.set("view", "demonew");
-  },
+  }
 })
 
 Template.buttonmenu.events({

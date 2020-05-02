@@ -13,6 +13,20 @@ $fascist-color: #f76b36;
   font-weight: 300;
 }
 
+html.dark-mode {
+  background-color: #222;
+  color: white;
+
+  button {
+    color: white;
+    background-color: #222;
+  }
+
+  ul.ring span {
+    background-color: #222;
+  }
+}
+
 body {
   padding-left: calc(50% - 190px);
   padding-right: calc(50% - 190px);
