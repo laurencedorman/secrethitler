@@ -125,6 +125,8 @@ Meteor.methods({
             topcard: topCard,
             message: `a ${topCard} policy has been enacted!`
           };
+
+          update.ruledout = [];
         }
       }
     }
