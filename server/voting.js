@@ -187,6 +187,24 @@ Meteor.methods({
         }
         // flash message - I still might just cut this out
         update.loudspeaker = true;
+
+        // end of game
+        if (update.liberal == 5 || update.fascist == 6) {
+          update.state = "gameover";
+          if (update.liberal == 5) {
+            update.winner = "liberals";
+            update.reason = "liberals have passed 5 policies!";
+          } else if (update.fascist == 6) {
+            update.winner = "fascists";
+            update.reason = "fascists have passed 6 policies!";
+          }
+          update.players = room.players;
+          for (let i = 0; i < room.players.length; i += 1) {
+            update.players[i].side = Players.findOne(room.players[i].playerId).role;
+          }
+        }
+        // policy is enacted so reset policychoices
+        update.policychoices = [];
       }
     }
     // console.log("vote continue", update);
